@@ -1,0 +1,29 @@
+---
+title: "Rama Alhariri"
+image: headshot.jpg
+toc: false
+about: 
+  template: broadside  
+  image-shape: round
+  links:
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/rama-alhariri/
+    - text: Twitter
+      href: https://twitter.com/rama_al99
+    - text: GitHub
+      href: https://github.com/ramaalhariri
+    - text: Email
+      href: mailto:ralhari1@jh.edu
+---
+
+Hello! My name is Rama Alhariri. I am a PhD student at the Human Genetics and Genomics Program at Johns Hopkins University. I am Syrian-American, though I would not delimit myself to that cultural description as I have lived in and moved around lots of places between Kentucky, Saudi Arabia, Dubai, New York, Shanghai (only for a month) and Baltimore. Some things I like to do for fun involve snuggling with my cat (she is a cuddle bug), hiking, reading, exercising and hanging out with friends and meeting new people.
+
+## Education
+
+**Johns Hopkins University** \| Baltimore, MD
+
+PhD in Human Genetics and Genomics \| August 2021 - Present
+
+**New York University Abu Dhabi** \| Abu Dhabi, United Arab Emirates
+
+B.A in Biology \| September 2017 - June 2021

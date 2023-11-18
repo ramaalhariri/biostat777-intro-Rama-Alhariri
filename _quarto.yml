@@ -1,0 +1,22 @@
+project:
+  type: website
+  output-dir: docs
+  
+  
+website:
+  title: "Rama Alhariri"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - analysis.qmd
+
+format:
+  html:
+    theme: minty
+    css: styles.css
+    toc: true
+
+editor: visual
+
