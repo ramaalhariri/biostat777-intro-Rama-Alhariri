@@ -5,6 +5,7 @@ toc: false
 about: 
   template: broadside  
   image-shape: round
+  image-width: 20em
   links:
     - text: LinkedIn
       href: https://www.linkedin.com/in/rama-alhariri/

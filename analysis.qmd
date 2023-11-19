@@ -1,0 +1,287 @@
+---
+title: "Data Analysis"
+bibliography: references.bib
+
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+---
+
+## Data
+
+The data is obtained from the Patient Risk Profiles dataset in TidyTuesday package. It specifically examines patient risk on 14 outcomes based on medical history features. The data dictionary can be found [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-10-24/readme.md).
+
+## Questions
+
+What is the prevalence and distribution of pulmonary embolism stratified by sex and smoking status?
+
+How does the risk of developing pulmonary embolism correlate with the risk of developing 13 other health outcomes?
+
+:::column-margin
+![Diagram depicting pulmonary embolism](pe.jpeg) 
+:::
+
+
+
+## Audience
+
+The intended audience for this dataset is healthcare professionals, researchers, or organizations involved in the healthcare industry. This type of dataset could be used to analyze and assess the risk factors associated with patients' health conditions. Healthcare providers, insurers, researchers, and policymakers may be interested in such data to understand patterns, make informed decisions, and improve patient outcomes.
+
+## Reading in libraries
+
+```{r load packages}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| output: false
+
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(here)
+library(ggplot2)
+library(forcats)
+
+```
+
+## Reading in Data
+
+::: callout-note
+My data was obtained from the Patient Risk Profiles dataset on TidyTuesday. Two options exist to load the dataset, the first one is through using the TidyTuesday R package and the second one is through accessing the .csv file on github
+:::
+
+### Option 1: TidyTuesday
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+# if(!file.exists(here("data","tuesdata_rainfall.RDS"))){
+#   tuesdata <- tidytuesdayR::tt_load('2020-01-07')
+#   rainfall <- tuesdata$rainfall
+#   temperature <- tuesdata$temperature
+#   
+#   # save the files to RDS objects
+#   saveRDS(tuesdata$rainfall, file = here("data","tuesdata_rainfall.RDS"))
+#   saveRDS(tuesdata$temperature, file = here("data","tuesdata_temperature.RDS"))
+# }
+# 
+# # Option 1: tidytuesdayR package 
+# ## install.packages("tidytuesdayR")
+# 
+# tuesdata <- tidytuesdayR::tt_load('2023-10-24')
+# ## OR
+# tuesdata <- tidytuesdayR::tt_load(2023, week = 43)
+# 
+# patient_risk_profiles <- tuesdata$patient_risk_profiles
+
+# if(!file.exists(here("data","tuesdata_patient_risk_profiles.RDS"))){
+#   tuesdata <- tidytuesdayR::tt_load('2023-10-24')
+#   
+#   # Extract patient_risk_profiles data
+#   patient_risk_profiles <- tuesdata$patient_risk_profiles
+# 
+#   # Save the file to an RDS object
+#   saveRDS(patient_risk_profiles, file = here("data","tuesdata_patient_risk_profiles.RDS"))
+# }
+# 
+# 
+# patient_risk_profiles <- readRDS(here("data","tuesdata_patient_risk_profiles.RDS"))
+
+
+```
+
+### Option 2: Reading from GitHub
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+
+# Option 2: Read directly from GitHub
+
+patient_risk_profiles <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-10-24/patient_risk_profiles.csv', show_col_types = FALSE)
+
+```
+
+## Tidying the data
+
+::: callout-note
+Notice below that I have about 100 columns, some of which can be re-sorted into a long format, particularly to ease downstream graphical manipulation. I like to personally make my dataframes long when inputting data to graph on ggplot.
+:::
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+colnames(patient_risk_profiles)
+
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: "Code to make my data long"
+
+patient_risk_profiles_renamed=patient_risk_profiles %>% 
+  rename(Female = `Sex = FEMALE`,
+         Male = `Sex = MALE`,
+         `0-4` = `age group:   0 -   4`,
+         `5-9` = `age group:   5 -   9`,
+        `10-14` = `age group:  10 -  14`,
+        `15-19` = `age group:  15 -  19`,
+        `20-24` = `age group:  20 -  24`,
+        `25-29` = `age group:  25 -  29`,
+        `30-34` = `age group:  30 -  34`,
+        `35-39` = `age group:  35 -  39`,
+        `40-44` = `age group:  40 -  44`,
+        `45-49` = `age group:  45 -  49`,
+        `50-54` = `age group:  50 -  54`,
+        `55-59` = `age group:  55 -  59`,
+        `60-64` = `age group:  60 -  64`,
+        `65-69` = `age group:  65 -  69`,
+        `70-74` = `age group:  70 -  74`,
+        `75-79` = `age group:  75 -  79`,
+        `80-84` = `age group:  80 -  84`,
+        `85-89` = `age group:  85 -  89`,
+        `90-94` = `age group:  90 -  94`,
+        `Risk of Pulmonary Embolism` = 
+          `predicted risk of Pulmonary Embolism`) %>% 
+  mutate(Sex = ifelse(Female==1, "Female", 
+                      ifelse(Male==1, "Male", "unkown")),
+         `Age Group` = case_when(
+           `0-4` == 1 ~ "0-4",
+           `5-9` == 1 ~ "5-9",
+           `10-14` == 1 ~ "10-14",
+           `15-19` == 1 ~ "15-19",
+           `20-24` == 1 ~ "20-24",
+           `25-29` == 1 ~ "25-29",
+           `30-34` == 1 ~ "30-34",
+           `35-39` == 1 ~ "35-39",
+           `40-44` == 1 ~ "40-44",
+           `45-49` == 1 ~ "45-49",
+           `50-54` == 1 ~ "50-54",
+           `55-59` == 1 ~ "55-59",
+           `60-64` == 1 ~ "60-64",
+           `65-69` == 1 ~ "65-69",
+           `70-74` == 1 ~ "70-74",
+           `75-79` == 1 ~ "75-79",
+           `80-84` == 1 ~ "80-84",
+           `85-89` == 1 ~ "85-89",
+           `90-94` == 1 ~ "90-94",
+           TRUE ~ "Unknown"
+    )) %>% 
+  pivot_longer(
+    cols=starts_with("predicted risk"),
+    names_to = "predicted_risk",
+    values_to = "risk_value") %>% 
+  mutate(predicted_risk = str_remove(predicted_risk, 
+                                     "predicted risk of ")) %>%
+  mutate(predicted_risk = fct_recode(predicted_risk,
+        "Acute pancreatitis" = 
+          "Acute pancreatitis, with No chronic or hereditary or common causes of pancreatitis",
+        "Parkinson's Disease" = 
+          "Parkinson's disease, inpatient or with 2nd diagnosis",
+        "Sudden Hearing Loss" = 
+          "Sudden Hearing Loss, No congenital anomaly or middle or inner ear conditions",
+        "Sudden Vision Loss" = 
+          "Sudden Vision Loss, with no eye pathology causes"))
+
+
+```
+
+## Prevalence of pulmonary embolism by sex
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+patient_risk_profiles_renamed %>% 
+  group_by(Sex) %>% 
+  summarize(mean=mean(`Risk of Pulmonary Embolism`)) %>% 
+  ggplot(aes(x=`Sex`, 
+             y=mean)) +
+  geom_bar(stat="identity") + 
+  labs(title="Prevalence of Pulmonary Embolism by Sex",
+       subtitle=str_wrap("Males have higher average predicted risk of pulmonary embolism")) +
+  xlab("Sex")+ 
+  ylab("Mean Predicted Risk of Pulmonary Embolism")
+
+
+```
+
+::: {.callout-warning}
+We cannot say this is a statistically significant difference without carrying out a t-test. This is merely a rough illustration.
+:::
+
+## Distribution of Predicted Risk of Pulmonary Embolism Stratified by Smoking Status
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+
+patient_risk_profiles_renamed %>% 
+ggplot(aes(x=`Risk of Pulmonary Embolism`, 
+           color=as.factor(`Smoking in prior year`))) +
+  geom_density() +
+  labs(title=str_wrap("Distribution of Predicted Risk of Pulmonary Embolism Stratified by Smoking Status"),
+       subtitle = str_wrap("There is a lower predicted risk of pulmonary embolism for non-smokers compared to smokers")) +
+  ylab("Density") + 
+  scale_color_discrete(name = "Smoking Status", 
+                      labels = c("Non-smoker", "Smoker"))
+
+  
+```
+
+## Comparison with the literature 
+
+![As we can see from other works, smoking does correlate with embolisms, specifically thrombolembolism](correlation.png)@Bhutta2013
+
+## Mean predicted risk 
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+patient_risk_profiles_renamed %>% 
+  ggplot(aes(x=`Risk of Pulmonary Embolism`, 
+             y=`risk_value`,
+             color=`Sex`)) +
+  geom_point() +
+  facet_wrap(~predicted_risk) +
+  labs(title=str_wrap("Correlation between the Predicted risks of Different Conditions and Pulmonary Embolism"),
+       subtitle = str_wrap("The predicted risk of pulmonary embolism correlates poorly with the predicted risks of other conditions, with the exception of muscle weakness and dementia")) +
+  ylab("Predicted Risks") + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+
+```
+
+
+```{r}
+
+#Your analysis must include a .bib file, which you use to reference at least three unique citations. For example, it could be to a website or paper from where the original data came from or it could be to a paper describing a method you are using to analyze the data.
+
+# Your analysis must include the use of at least 1 margin content.
+
+# You must summarize your analysis and/or results with a paragraph (4-6 sentences).
+
+# At the end of the data analysis, list out each of the functions you used from each of the packages (dplyr, tidyr, and ggplot2) to help the TA with respect to making sure you met all the requirements described above.
+
+# dplyr
+# mutate
+# filter
+# group_by
+# summarize
+
+
+ #pivot_longer, rename, mutate, filter, group_by, summarize   
+
+
+#tidy r
+# pivot_longer
+
+
+```
+
+
+### References
+

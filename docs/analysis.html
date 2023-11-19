@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Rama Alhariri – analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Rama Alhariri</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./analysis.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Data</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data" id="toc-data" class="nav-link active" data-scroll-target="#data">Data</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#audience" id="toc-audience" class="nav-link" data-scroll-target="#audience">Audience</a></li>
+  <li><a href="#reading-in-libraries" id="toc-reading-in-libraries" class="nav-link" data-scroll-target="#reading-in-libraries">Reading in libraries</a></li>
+  <li><a href="#reading-in-data" id="toc-reading-in-data" class="nav-link" data-scroll-target="#reading-in-data">Reading in Data</a>
+  <ul class="collapse">
+  <li><a href="#option-1-tidytuesday" id="toc-option-1-tidytuesday" class="nav-link" data-scroll-target="#option-1-tidytuesday">Option 1: TidyTuesday</a></li>
+  <li><a href="#option-2-reading-from-github" id="toc-option-2-reading-from-github" class="nav-link" data-scroll-target="#option-2-reading-from-github">Option 2: Reading from GitHub</a></li>
+  </ul></li>
+  <li><a href="#tidying-the-data" id="toc-tidying-the-data" class="nav-link" data-scroll-target="#tidying-the-data">Tidying the data</a></li>
+  <li><a href="#prevalence-of-pulmonary-embolism-by-sex" id="toc-prevalence-of-pulmonary-embolism-by-sex" class="nav-link" data-scroll-target="#prevalence-of-pulmonary-embolism-by-sex">Prevalence of pulmonary embolism by sex</a></li>
+  <li><a href="#distribution-of-predicted-risk-of-pulmonary-embolism-stratified-by-smoking-status" id="toc-distribution-of-predicted-risk-of-pulmonary-embolism-stratified-by-smoking-status" class="nav-link" data-scroll-target="#distribution-of-predicted-risk-of-pulmonary-embolism-stratified-by-smoking-status">Distribution of Predicted Risk of Pulmonary Embolism Stratified by Smoking Status</a></li>
+  <li><a href="#comparison-with-the-literature" id="toc-comparison-with-the-literature" class="nav-link" data-scroll-target="#comparison-with-the-literature">Comparison with the literature</a></li>
+  <li><a href="#mean-predicted-risk" id="toc-mean-predicted-risk" class="nav-link" data-scroll-target="#mean-predicted-risk">Mean predicted risk</a>
+  <ul class="collapse">
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+
+
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The data is obtained from the Patient Risk Profiles dataset in TidyTuesday package. It specifically examines patient risk on 14 outcomes based on medical history features. The data dictionary can be found <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-10-24/readme.md">here</a>.</p>
+</section>
+<section id="questions" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<p>What is the prevalence and distribution of pulmonary embolism stratified by sex and smoking status?</p>
+<p>How does the risk of developing pulmonary embolism correlate with the risk of developing 13 other health outcomes?</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pe.jpeg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Diagram depicting pulmonary embolism</figcaption>
+</figure>
+</div>
+</div></div></section>
+<section id="audience" class="level2">
+<h2 class="anchored" data-anchor-id="audience">Audience</h2>
+<p>The intended audience for this dataset is healthcare professionals, researchers, or organizations involved in the healthcare industry. This type of dataset could be used to analyze and assess the risk factors associated with patients’ health conditions. Healthcare providers, insurers, researchers, and policymakers may be interested in such data to understand patterns, make informed decisions, and improve patient outcomes.</p>
+</section>
+<section id="reading-in-libraries" class="level2">
+<h2 class="anchored" data-anchor-id="reading-in-libraries">Reading in libraries</h2>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="reading-in-data" class="level2">
+<h2 class="anchored" data-anchor-id="reading-in-data">Reading in Data</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>My data was obtained from the Patient Risk Profiles dataset on TidyTuesday. Two options exist to load the dataset, the first one is through using the TidyTuesday R package and the second one is through accessing the .csv file on github</p>
+</div>
+</div>
+<section id="option-1-tidytuesday" class="level3">
+<h3 class="anchored" data-anchor-id="option-1-tidytuesday">Option 1: TidyTuesday</h3>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># if(!file.exists(here("data","tuesdata_rainfall.RDS"))){</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   tuesdata &lt;- tidytuesdayR::tt_load('2020-01-07')</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   rainfall &lt;- tuesdata$rainfall</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   temperature &lt;- tuesdata$temperature</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   # save the files to RDS objects</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#   saveRDS(tuesdata$rainfall, file = here("data","tuesdata_rainfall.RDS"))</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#   saveRDS(tuesdata$temperature, file = here("data","tuesdata_temperature.RDS"))</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># # Option 1: tidytuesdayR package </span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># ## install.packages("tidytuesdayR")</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># tuesdata &lt;- tidytuesdayR::tt_load('2023-10-24')</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># ## OR</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># tuesdata &lt;- tidytuesdayR::tt_load(2023, week = 43)</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># patient_risk_profiles &lt;- tuesdata$patient_risk_profiles</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># if(!file.exists(here("data","tuesdata_patient_risk_profiles.RDS"))){</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co">#   tuesdata &lt;- tidytuesdayR::tt_load('2023-10-24')</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Extract patient_risk_profiles data</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">#   patient_risk_profiles &lt;- tuesdata$patient_risk_profiles</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Save the file to an RDS object</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">#   saveRDS(patient_risk_profiles, file = here("data","tuesdata_patient_risk_profiles.RDS"))</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co"># patient_risk_profiles &lt;- readRDS(here("data","tuesdata_patient_risk_profiles.RDS"))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="option-2-reading-from-github" class="level3">
+<h3 class="anchored" data-anchor-id="option-2-reading-from-github">Option 2: Reading from GitHub</h3>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 2: Read directly from GitHub</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>patient_risk_profiles <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-10-24/patient_risk_profiles.csv'</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="tidying-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="tidying-the-data">Tidying the data</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notice below that I have about 100 columns, some of which can be re-sorted into a long format, particularly to ease downstream graphical manipulation. I like to personally make my dataframes long when inputting data to graph on ggplot.</p>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(patient_risk_profiles)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] "personId"                                                                                            
+  [2] "age group:  10 -  14"                                                                                
+  [3] "age group:  15 -  19"                                                                                
+  [4] "age group:  20 -  24"                                                                                
+  [5] "age group:  65 -  69"                                                                                
+  [6] "age group:  40 -  44"                                                                                
+  [7] "age group:  45 -  49"                                                                                
+  [8] "age group:  55 -  59"                                                                                
+  [9] "age group:  85 -  89"                                                                                
+ [10] "age group:  75 -  79"                                                                                
+ [11] "age group:   5 -   9"                                                                                
+ [12] "age group:  25 -  29"                                                                                
+ [13] "age group:   0 -   4"                                                                                
+ [14] "age group:  70 -  74"                                                                                
+ [15] "age group:  50 -  54"                                                                                
+ [16] "age group:  60 -  64"                                                                                
+ [17] "age group:  35 -  39"                                                                                
+ [18] "age group:  30 -  34"                                                                                
+ [19] "age group:  80 -  84"                                                                                
+ [20] "age group:  90 -  94"                                                                                
+ [21] "Sex = FEMALE"                                                                                        
+ [22] "Sex = MALE"                                                                                          
+ [23] "Acetaminophen exposures in prior year"                                                               
+ [24] "Occurrence of Alcoholism in prior year"                                                              
+ [25] "Anemia in prior year"                                                                                
+ [26] "Angina events in prior year"                                                                         
+ [27] "ANTIEPILEPTICS in prior year"                                                                        
+ [28] "Occurrence of Anxiety in prior year"                                                                 
+ [29] "Osteoarthritis in prior year"                                                                        
+ [30] "Aspirin exposures in prior year"                                                                     
+ [31] "Occurrence of Asthma in prior year"                                                                  
+ [32] "Atrial Fibrillation, incident in prior year"                                                         
+ [33] "HORMONAL CONTRACEPTIVES in prior year"                                                               
+ [34] "Any cancer (excl. prostate cancer and benign cancer) in prior year"                                  
+ [35] "Acute Kidney Injury (AKI) in prior year"                                                             
+ [36] "Chronic kidney disease or end stage renal disease in prior year"                                     
+ [37] "Heart failure in prior year"                                                                         
+ [38] "Chronic obstructive pulmonary disease (COPD) in prior year"                                          
+ [39] "Coronary artery disease (CAD) in prior year"                                                         
+ [40] "Major depressive disorder, with NO occurrence of certain psychiatric disorder in prior year"         
+ [41] "Type 1 diabetes and no prior specific non-T1DM diabetes in prior year"                               
+ [42] "Type 2 Diabetes Mellitus (DM), with no type 1 or secondary DM in prior year"                         
+ [43] "Deep Vein Thrombosis (DVT) in prior year"                                                            
+ [44] "Dyspnea in prior year"                                                                               
+ [45] "Edema in prior year"                                                                                 
+ [46] "Gastroesophageal reflux disease in prior year"                                                       
+ [47] "Acute gastrointestinal (GI) bleeding in prior year"                                                  
+ [48] "Heart valve disorder in prior year"                                                                  
+ [49] "Chronic hepatitis in prior year"                                                                     
+ [50] "Hyperlipidemia in prior year"                                                                        
+ [51] "Hypertension in prior year"                                                                          
+ [52] "Hypothyroidism in prior year"                                                                        
+ [53] "Inflammatory Bowel Disease in prior year"                                                            
+ [54] "Low back pain in prior year"                                                                         
+ [55] "Occurrence of neuropathy in prior year"                                                              
+ [56] "Obesity in prior year"                                                                               
+ [57] "Opioids in prior year"                                                                               
+ [58] "Osteoporosis in prior year"                                                                          
+ [59] "Peripheral vascular disease in prior year"                                                           
+ [60] "Pneumonia in prior year"                                                                             
+ [61] "Psychotic disorder in prior year"                                                                    
+ [62] "Acute Respiratory failure in prior year"                                                             
+ [63] "Rheumatoid Arthritis in prior year"                                                                  
+ [64] "Seizure in prior year"                                                                               
+ [65] "Sepsis in prior year"                                                                                
+ [66] "Skin ulcer in prior year"                                                                            
+ [67] "Sleep apnea in prior year"                                                                           
+ [68] "Smoking in prior year"                                                                               
+ [69] "STEROIDS in prior year"                                                                              
+ [70] "Hemorrhagic stroke in an inpatient setting in prior year"                                            
+ [71] "Non-hemorrhagic Stroke in an inpatient setting in prior year"                                        
+ [72] "Urinary tract infectious disease in prior year"                                                      
+ [73] "Antibiotics Carbapenems in prior year"                                                               
+ [74] "Antibiotics Aminoglycosides in prior year"                                                           
+ [75] "Antibiotics Cephalosporins in prior year"                                                            
+ [76] "Antibiotics Fluoroquinolones in prior year"                                                          
+ [77] "Antibiotics Glycopeptides and lipoglycopeptides in prior year"                                       
+ [78] "Antibiotics Macrolides in prior year"                                                                
+ [79] "Antibiotics Monobactams in prior year"                                                               
+ [80] "Antibiotics Oxazolidinones in prior year"                                                            
+ [81] "Antibiotics Penicillins in prior year"                                                               
+ [82] "Antibiotics Polypeptides in prior year"                                                              
+ [83] "Antibiotics Rifamycins in prior year"                                                                
+ [84] "Antibiotics Sulfonamides in prior year"                                                              
+ [85] "Antibiotics Streptogramins in prior year"                                                            
+ [86] "Antibiotics Tetracyclines in prior year"                                                             
+ [87] "predicted risk of Pulmonary Embolism"                                                                
+ [88] "predicted risk of Sudden Hearing Loss, No congenital anomaly or middle or inner ear conditions"      
+ [89] "predicted risk of Restless Leg Syndrome"                                                             
+ [90] "predicted risk of Sudden Vision Loss, with no eye pathology causes"                                  
+ [91] "predicted risk of Muscle weakness or injury"                                                         
+ [92] "predicted risk of Ankylosing Spondylitis"                                                            
+ [93] "predicted risk of Autoimmune hepatitis"                                                              
+ [94] "predicted risk of Multiple Sclerosis"                                                                
+ [95] "predicted risk of Acute pancreatitis, with No chronic or hereditary or common causes of pancreatitis"
+ [96] "predicted risk of Ulcerative colitis"                                                                
+ [97] "predicted risk of Migraine"                                                                          
+ [98] "predicted risk of Dementia"                                                                          
+ [99] "predicted risk of  Treatment resistant depression (TRD)"                                             
+[100] "predicted risk of Parkinson's disease, inpatient or with 2nd diagnosis"                              </code></pre>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code to make my data long</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>patient_risk_profiles_renamed<span class="ot">=</span>patient_risk_profiles <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Female =</span> <span class="st">`</span><span class="at">Sex = FEMALE</span><span class="st">`</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">Male =</span> <span class="st">`</span><span class="at">Sex = MALE</span><span class="st">`</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">0-4</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:   0 -   4</span><span class="st">`</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">5-9</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:   5 -   9</span><span class="st">`</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">10-14</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:  10 -  14</span><span class="st">`</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">15-19</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:  15 -  19</span><span class="st">`</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">20-24</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:  20 -  24</span><span class="st">`</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">25-29</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:  25 -  29</span><span class="st">`</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">30-34</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:  30 -  34</span><span class="st">`</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">35-39</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:  35 -  39</span><span class="st">`</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">40-44</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:  40 -  44</span><span class="st">`</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">45-49</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:  45 -  49</span><span class="st">`</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">50-54</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:  50 -  54</span><span class="st">`</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">55-59</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:  55 -  59</span><span class="st">`</span>,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">60-64</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:  60 -  64</span><span class="st">`</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">65-69</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:  65 -  69</span><span class="st">`</span>,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">70-74</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:  70 -  74</span><span class="st">`</span>,</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">75-79</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:  75 -  79</span><span class="st">`</span>,</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">80-84</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:  80 -  84</span><span class="st">`</span>,</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">85-89</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:  85 -  89</span><span class="st">`</span>,</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">90-94</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">age group:  90 -  94</span><span class="st">`</span>,</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">Risk of Pulmonary Embolism</span><span class="st">`</span> <span class="ot">=</span> </span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>          <span class="st">`</span><span class="at">predicted risk of Pulmonary Embolism</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sex =</span> <span class="fu">ifelse</span>(Female<span class="sc">==</span><span class="dv">1</span>, <span class="st">"Female"</span>, </span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">ifelse</span>(Male<span class="sc">==</span><span class="dv">1</span>, <span class="st">"Male"</span>, <span class="st">"unkown"</span>)),</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Age Group</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">case_when</span>(</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">0-4</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"0-4"</span>,</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">5-9</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"5-9"</span>,</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">10-14</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"10-14"</span>,</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">15-19</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"15-19"</span>,</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">20-24</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"20-24"</span>,</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">25-29</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"25-29"</span>,</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">30-34</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"30-34"</span>,</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">35-39</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"35-39"</span>,</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">40-44</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"40-44"</span>,</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">45-49</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"45-49"</span>,</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">50-54</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"50-54"</span>,</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">55-59</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"55-59"</span>,</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">60-64</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"60-64"</span>,</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">65-69</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"65-69"</span>,</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">70-74</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"70-74"</span>,</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">75-79</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"75-79"</span>,</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">80-84</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"80-84"</span>,</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">85-89</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"85-89"</span>,</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">90-94</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"90-94"</span>,</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>           <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Unknown"</span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>    )) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols=</span><span class="fu">starts_with</span>(<span class="st">"predicted risk"</span>),</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"predicted_risk"</span>,</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"risk_value"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">predicted_risk =</span> <span class="fu">str_remove</span>(predicted_risk, </span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"predicted risk of "</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">predicted_risk =</span> <span class="fu">fct_recode</span>(predicted_risk,</span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Acute pancreatitis"</span> <span class="ot">=</span> </span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Acute pancreatitis, with No chronic or hereditary or common causes of pancreatitis"</span>,</span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Parkinson's Disease"</span> <span class="ot">=</span> </span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Parkinson's disease, inpatient or with 2nd diagnosis"</span>,</span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Sudden Hearing Loss"</span> <span class="ot">=</span> </span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Sudden Hearing Loss, No congenital anomaly or middle or inner ear conditions"</span>,</span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Sudden Vision Loss"</span> <span class="ot">=</span> </span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Sudden Vision Loss, with no eye pathology causes"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="prevalence-of-pulmonary-embolism-by-sex" class="level2">
+<h2 class="anchored" data-anchor-id="prevalence-of-pulmonary-embolism-by-sex">Prevalence of pulmonary embolism by sex</h2>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>patient_risk_profiles_renamed <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean=</span><span class="fu">mean</span>(<span class="st">`</span><span class="at">Risk of Pulmonary Embolism</span><span class="st">`</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="st">`</span><span class="at">Sex</span><span class="st">`</span>, </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">y=</span>mean)) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span> </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Prevalence of Pulmonary Embolism by Sex"</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="fu">str_wrap</span>(<span class="st">"Males have higher average predicted risk of pulmonary embolism"</span>)) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Sex"</span>)<span class="sc">+</span> </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Mean Predicted Risk of Pulmonary Embolism"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="analysis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We cannot say this is a statistically significant difference without carrying out a t-test. This is merely a rough illustration.</p>
+</div>
+</div>
+</section>
+<section id="distribution-of-predicted-risk-of-pulmonary-embolism-stratified-by-smoking-status" class="level2">
+<h2 class="anchored" data-anchor-id="distribution-of-predicted-risk-of-pulmonary-embolism-stratified-by-smoking-status">Distribution of Predicted Risk of Pulmonary Embolism Stratified by Smoking Status</h2>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>patient_risk_profiles_renamed <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="st">`</span><span class="at">Risk of Pulmonary Embolism</span><span class="st">`</span>, </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">color=</span><span class="fu">as.factor</span>(<span class="st">`</span><span class="at">Smoking in prior year</span><span class="st">`</span>))) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="fu">str_wrap</span>(<span class="st">"Distribution of Predicted Risk of Pulmonary Embolism Stratified by Smoking Status"</span>),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">str_wrap</span>(<span class="st">"There is a lower predicted risk of pulmonary embolism for non-smokers compared to smokers"</span>)) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Density"</span>) <span class="sc">+</span> </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(<span class="at">name =</span> <span class="st">"Smoking Status"</span>, </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>                      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Non-smoker"</span>, <span class="st">"Smoker"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="analysis_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="comparison-with-the-literature" class="level2">
+<h2 class="anchored" data-anchor-id="comparison-with-the-literature">Comparison with the literature</h2>
+<p><img src="correlation.png" class="img-fluid" alt="As we can see from other works, smoking does correlate with embolisms, specifically thrombolembolism"><span class="citation" data-cites="Bhutta2013">@Bhutta2013</span></p>
+</section>
+<section id="mean-predicted-risk" class="level2">
+<h2 class="anchored" data-anchor-id="mean-predicted-risk">Mean predicted risk</h2>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>patient_risk_profiles_renamed <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="st">`</span><span class="at">Risk of Pulmonary Embolism</span><span class="st">`</span>, </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y=</span><span class="st">`</span><span class="at">risk_value</span><span class="st">`</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">`</span><span class="at">Sex</span><span class="st">`</span>)) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>predicted_risk) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="fu">str_wrap</span>(<span class="st">"Correlation between the Predicted risks of Different Conditions and Pulmonary Embolism"</span>),</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">str_wrap</span>(<span class="st">"The predicted risk of pulmonary embolism correlates poorly with the predicted risks of other conditions, with the exception of muscle weakness and dementia"</span>)) <span class="sc">+</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Predicted Risks"</span>) <span class="sc">+</span> </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="analysis_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Your analysis must include a .bib file, which you use to reference at least three unique citations. For example, it could be to a website or paper from where the original data came from or it could be to a paper describing a method you are using to analyze the data.</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your analysis must include the use of at least 1 margin content.</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># You must summarize your analysis and/or results with a paragraph (4-6 sentences).</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># At the end of the data analysis, list out each of the functions you used from each of the packages (dplyr, tidyr, and ggplot2) to help the TA with respect to making sure you met all the requirements described above.</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># dplyr</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># mutate</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># filter</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co"># group_by</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co"># summarize</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a> <span class="co">#pivot_longer, rename, mutate, filter, group_by, summarize   </span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="co">#tidy r</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="co"># pivot_longer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
